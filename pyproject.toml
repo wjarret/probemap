@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "probemap"
+version = "0.0.1"
+description = "Modular machine-learning toolkit for RNA chemical probing data"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "<YOUR_NAME>" }]
+dependencies = ["numpy", "pandas", "scikit-learn"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/probemap"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
